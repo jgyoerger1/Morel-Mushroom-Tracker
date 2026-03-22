@@ -522,7 +522,7 @@
 //  !! CONFIG — FILL THESE IN BEFORE UPLOADING TO GITHUB !!
 // ════════════════════════════════════════════════════════════════════════════
 const CONFIG = {
-  GITHUB_TOKEN: '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',
+  GITHUB_TOKEN: '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',
   GITHUB_USER: 'jgyoerger1',
   GITHUB_REPO: 'Morel-Mushroom-Tracker',
   DATA_FILE: 'spots.json',
@@ -537,9 +537,8 @@ const HABITATS = { elm:'Dead Elm', ash:'Ash', apple:'Apple', cottonwood:'Cottonw
 const currentMonth = new Date().getMonth();
 
 // Check config
-const isConfigured = CONFIG.GITHUB_TOKEN !== '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'
-  && CONFIG.GITHUB_USER !== 'jgyoerger1'
-  && CONFIG.GITHUB_REPO !== 'Morel-Mushroom-Tracker';
+const isConfigured = CONFIG.GITHUB_TOKEN !== 'PASTE_YOUR_TOKEN_HERE'
+  && CONFIG.GITHUB_TOKEN.startsWith('ghp_');
 
 if (!isConfigured) {
   document.getElementById('configBanner').classList.add('show');
@@ -630,7 +629,7 @@ async function refreshSha() {
 }
 
 async function saveToGitHub() {
-  if (!isConfigured) { showToast('⚠️ Fill in CONFIG values first'); return; }
+  if (!CONFIG.GITHUB_TOKEN || CONFIG.GITHUB_TOKEN === 'PASTE_YOUR_TOKEN_HERE') { showToast('⚠️ Paste your GitHub token in the CONFIG block'); return; }
   if (!isOwner) { showToast('⚠️ Not in owner mode'); return; }
   setSyncState('saving');
   try {
