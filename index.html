@@ -522,7 +522,7 @@
 //  !! CONFIG — FILL THESE IN BEFORE UPLOADING TO GITHUB !!
 // ════════════════════════════════════════════════════════════════════════════
 const CONFIG = {
-  GITHUB_TOKEN: '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',
+  GITHUB_TOKEN: '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',
   GITHUB_USER: 'jgyoerger1',
   GITHUB_REPO: 'Morel-Mushroom-Tracker',
   DATA_FILE: 'spots.json',
@@ -537,9 +537,9 @@ const HABITATS = { elm:'Dead Elm', ash:'Ash', apple:'Apple', cottonwood:'Cottonw
 const currentMonth = new Date().getMonth();
 
 // Check config
-const isConfigured = CONFIG.GITHUB_TOKEN !== 'YOUR_GITHUB_TOKEN_HERE'
-  && CONFIG.GITHUB_USER !== 'YOUR_GITHUB_USERNAME'
-  && CONFIG.GITHUB_REPO !== 'YOUR_REPO_NAME';
+const isConfigured = CONFIG.GITHUB_TOKEN !== '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'
+  && CONFIG.GITHUB_USER !== 'jgyoerger1'
+  && CONFIG.GITHUB_REPO !== 'Morel-Mushroom-Tracker';
 
 if (!isConfigured) {
   document.getElementById('configBanner').classList.add('show');
